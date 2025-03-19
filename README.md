@@ -15,11 +15,24 @@ W kodzie użyto:
 	
 # Wykorzystanie
 Kod był uruchamiany i napisany w środowisku IntelliJ IDEA. Struktura projektu składa 
-się z plików `AmountComparator.java`, `CarShowroom.java`, `CarShowroomContainer.java` (kontenert zarządzający 
-wszytskimi salonami - przechwouje salony, dodaje i usuwa salony, wyszukuje salony oraz sortuje je po pojemności),
-`CarShowroomGUI.java` (klasa główna interfejsu graficznego, zawiera tablę z listą pojazdów, mechanizm wyszukiwania 
-po marce, system ulubionych pojazdów, integrację z CSV oraz serializacją oraz opcje informacji w dymku o pojeździe), 
-`ItemCondition.java`, `Main.java`, `PriceComparator.java`, `Vehicle.java`, `ExcludeFromExport.java`, `ExportCSV.java`, 
-`Serialization.java` (klasa odpowiadająca za serializację oraz deserializację danych - dane są odczytywane 
-i zapisywane wraz z listą ulubionych, stan samochodu jest ustawiany na nowy przy wczytywaniu), 
-`TableColumnInfo.java`
+się z plików `AmountComparator.java` (odpowiada docelowo za sortowanie pojazdów względem ich ilości, 
+malejąco, wykorzystuje `Comparator` do realizacji sortowania), `CarShowroom.java` (klasa 
+reprezentująca pojedyńczy salon samochodowy, zawiera wszystkie infomracje na jego temat, znajduje 
+się w niej lista pojazdów, funkcje związane z dodawaniem i usuwaniem pojazdów, operacje związane z 
+sortowaniem po nazwie, cenie oraz ilości pojazdów oraz obliczanie bieżącej pojemności salonu), 
+`CarShowroomContainer.java` (kontenert zarządzający wszytskimi salonami - przechwouje salony, dodaje 
+i usuwa salony, wyszukuje salony oraz sortuje je po pojemności),`CarShowroomGUI.java` (klasa główna 
+interfejsu graficznego, zawiera tablę z listą pojazdów, mechanizm wyszukiwania po marce, system 
+ulubionych pojazdów, integrację z CSV oraz serializacją oraz opcje informacji w dymku o pojeździe), 
+`ItemCondition.java` (klasa typu `enum` zawierająca możliwe stany pojazdów, dodatkowo zawiera w 
+swojej strukturze metodę `toString` dla drukowania nazw po polsku), `Main.java` (główna klasa 
+programu, uruchamiająca inicjalizację budowy GUI, zawiera także zakomentowane elementy 
+(przykładowem, do testowania działania programu)), 
+`PriceComparator.java` (odpowiada docelowo za sortowanie pojazdów względem ich ceny, rosnąco, 
+wykorzystuje `Comparator` do realizacji sortowania), `Vehicle.java`, `ExcludeFromExport.java` 
+(mechanizm służacy do niestandardowej adnotacji, służacej do pomijania pól tymczasowych w 
+eksporcie), `ExportCSV.java`(klasa służąca do eksportowania/importowania danych do/z pliku CSV, 
+generowane są w niej nagłówki CSV za pomocą refleksji, oznaczone pola są pomijane, dodana została 
+także obsługa typów prostych (do `ItemCondition`)), `Serialization.java` (klasa odpowiadająca za 
+serializację oraz deserializację danych - dane są odczytywane i zapisywane wraz z listą ulubionych, 
+stan samochodu jest ustawiany na nowy przy wczytywaniu), `TableColumnInfo.java`
